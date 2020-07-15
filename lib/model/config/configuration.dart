@@ -17,6 +17,11 @@ class Configuration {
       _$ConfigurationFromJson(json);
 
   Map<String, dynamic> toJson() => _$ConfigurationToJson(this);
+
+  @override
+  String toString() {
+    return '${toJson()}';
+  }
 }
 
 @JsonSerializable(explicitToJson: true)

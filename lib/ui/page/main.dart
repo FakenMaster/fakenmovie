@@ -1,8 +1,13 @@
 import 'package:FaKenMovie/ui/route/movie_router.gr.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+
+import '../../repository/repository.dart';
+import '../../repository/repository.dart';
 
 void main() {
+  GetIt.I.registerSingleton<Repository>(Repository());
   runApp(MyApp());
 }
 
@@ -16,6 +21,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+
       /// TODO为什么这里可以这么用？
       builder: ExtendedNavigator<MovieRouter>(
         router: MovieRouter(),
